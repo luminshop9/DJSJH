@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const ai = new GoogleGenAI({
-  apiKey: ´AIzaSyAVHdMJXrtN8YzPfqJLgxR0EvJpb8kVgh4´ 
+  apiKey: process.env.GEMINI_API_KEY || "",
 });
 
 // Tools for Lumin AI

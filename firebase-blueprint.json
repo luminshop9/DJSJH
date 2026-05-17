@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A product in the inventory",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Product name" },
+        "sku": { "type": "string", "description": "Stock Keeping Unit" },
+        "stock": { "type": "number", "description": "Current stock quantity" },
+        "cost": { "type": "number", "description": "Unit cost price" },
+        "price": { "type": "number", "description": "Unit selling price" },
+        "category": { "type": "string", "description": "Category (Mug, Polo, etc.)" },
+        "imageUrl": { "type": "string", "description": "URL to product image" },
+        "supplier": { "type": "string", "description": "Supplier name" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "sku", "stock", "cost", "price", "category"]
+    },
+    "Sale": {
+      "title": "Sale",
+      "description": "A recorded sale transaction",
+      "type": "object",
+      "properties": {
+        "items": { "type": "array", "description": "List of items in the sale" },
+        "total": { "type": "number", "description": "Total sale amount" },
+        "profit": { "type": "number", "description": "Profit from this sale" },
+        "clientId": { "type": "string", "description": "Optional customer ID" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "total", "profit", "createdAt"]
+    },
+    "Expense": {
+      "title": "Expense",
+      "description": "Business expenses outside of product costs",
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["description", "amount", "date"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Inventory products"
+    },
+    "/sales/{saleId}": {
+      "schema": "Sale",
+      "description": "Sales history"
+    },
+    "/expenses/{expenseId}": {
+      "schema": "Expense",
+      "description": "Business expenses"
+    }
+  }
+}

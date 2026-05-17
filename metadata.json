@@ -1,0 +1,6 @@
+{
+  "name": "Lumin Shop Dashboard",
+  "description": "Modern SaaS dashboard for Lumin Shop: personalizing mugs, shirts, and accessories with smart inventory and AI business assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

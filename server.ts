@@ -7,8 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_API_KEY || "",
-});
+  apiKey: import.meta.env.VITE_API_KEY });
 
 // Tools for Lumin AI
 const updateStockTool: FunctionDeclaration = {
